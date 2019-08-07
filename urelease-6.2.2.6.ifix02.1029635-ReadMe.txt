@@ -1,0 +1,60 @@
+To install that fix:
+-Stop UCR server
+-Remove ROOT/ and ROOT.war under the <server_dir>/server/tomcat/webapps directory
+-Copy the new .war file under <server_dir>/server/tomcat/webapps and rename it ROOT.war
+-Restart UCR server
+
+========================================================================================================================
+
+All UCR ifixes are cumulative unless specified. Below is an itemization of the contents of the current ifix and each
+included ifix.
+
+========================================================================================================================
+
+6.2.2.4.ifix02
+NOTE: THIS FIX INCLUDES A DB UPGRADE. A DB BACKUP SHOULD BE TAKEN BEFORE APPLYING THIS FIX
+
+Bug Fixes
+	Remove duplicate UCD processes that are application template processes brought in by the built in UCD integration
+	
+6.2.2.4.ifix01
+
+Features
+	Hover functionality for Initiatives imported from RTC
+	Task Dependency graph for deployment plans
+	Improved auditing for scheduled deployments
+	allow editing of a failed task
+	allow manual versions to be created from the application and versions tab of a scheduled deployment
+	allow user to be changed on a task while it is executing
+	new permission to unlock deployments
+	new notification rules
+	add permission to allow editing of a release's dates
+	ldap group import
+	archive users no longer found in ldap
+
+Beta Features (Feature Flags)
+	ability to archive started scheduled deployments
+	Reset Approval On Version Change
+	Ability to act on a task from an email
+
+
+
+Performance/Usability Improvements
+	search functionality in "Copy From" field in "Create New Deployment Plan" dialog
+	Improved performance of environment reservation dialog
+
+Bug Fixes
+	ensure Environment reservation dialog is not case sensitive for DB2
+	Remove options for old built in integrations
+	fixed dependency count on task row to keep value after opening task dialog
+	fixed issue with editing maintenance settings
+	Ensure segments deleted from a deployment plan also clean up references to it's tasks
+	improved performance of removing a scheduled deployment from an enterprise deployment
+	fixed issues around estimated end time of a segment
+	fixed countdown for wait for time tasks
+	ensure wait for time tasks do not start after a deployment is aborted
+	ensure notification tasks show assigned user
+	ensure utf-8 is used for integration sync methods
+	stop plugins from creating world writable files
+	fixed issues with countdown widget
+	recalculate milestone dates when editing a release's date
